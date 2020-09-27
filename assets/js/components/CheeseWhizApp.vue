@@ -1,4 +1,4 @@
-<template>
+v-on:user-authenticated="onUserAuthenticated"<template>
     <div class="wrapper">
         <div style="position:relative;">
             <div class="row no-gutters" style="box-shadow: 0 3px 7px 1px rgba(0,0,0,0.06);">
