@@ -18,6 +18,9 @@
 
 `bin/console doctrine:schema:create --env=test`
 
+#### composer
+
+connaitre la version d'un paquet `composer show api-platform/core`
 
 # API Platform Tutorial
 
