@@ -4,6 +4,9 @@
 
 `bin/console cofing:dump api_platform` pour avoir toutes les configurations possibles
 
+##### password encoder
+
+`bin/console security:encode`
 
 
 # API Platform Tutorial
