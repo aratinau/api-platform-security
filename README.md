@@ -8,6 +8,16 @@
 
 `bin/console security:encode`
 
+##### Tests
+
+`composer require test --dev`
+
+`php bin/phpuni`
+
+`bin/console doctrine:database:create --env=test`
+
+`bin/console doctrine:schema:create --env=test`
+
 
 # API Platform Tutorial
 
