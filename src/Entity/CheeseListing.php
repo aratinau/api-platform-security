@@ -14,9 +14,16 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
 
+// ATTENTION
+// access_control option was replaced by security in api-platform/core v2.5.0.
+// "post"={"security"="is_granted('ROLE_USER')"}
+
 /**
  * @ApiResource(
- *     collectionOperations={"get", "post"},
+ *     collectionOperations={
+ *          "get",
+ *          "post" = { "access_control" = "is_granted('ROLE_USER')" }
+ *     },
  *     itemOperations={
  *          "get"={
  *              "normalization_context"={"groups"={"cheese_listing:read", "cheese_listing:item:get"}},
