@@ -17,6 +17,21 @@ security:
         main:
             anonymous: true
 
+            json_login:
+                check_path: app_login
+                username_path: email
+                password_path: password
+            # Comment sait-il charger l'utilisateur à partir de la base de données ...
+            # et quel champ utiliser pour cette requête? La réponse est: la section des provider.
+            # Cela a été ajouté dans le dernier tutoriel pour nous par la commande make: user.
+            # Il indique au système de sécurité que notre utilisateur vit dans Doctrine et il doit interroger
+            # l'utilisateur via la propriété email. Si vous avez une requête plus complexe ...
+            # ou si vous devez charger des utilisateurs depuis un endroit totalement différent,
+            # vous devrez créer un fournisseur d'utilisateurs personnalisé ou un authentificateur
+            # Guard entièrement personnalisé, au lieu d'utiliser json_login. Fondamentalement,
+            # json_login fonctionne très bien si vous vous intégrez à ce système.
+            # Sinon, vous pouvez le jeter à la poubelle et créer votre propre authentificateur.
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 

@@ -1,3 +1,11 @@
+# NOTES
+
+`bin/console debug:config api_platform`
+
+`bin/console cofing:dump api_platform` pour avoir toutes les configurations possibles
+
+
+
 # API Platform Tutorial
 
 Well hi there! This repository holds the code and script
