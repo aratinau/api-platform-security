@@ -32,6 +32,9 @@ security:
             # json_login fonctionne très bien si vous vous intégrez à ce système.
             # Sinon, vous pouvez le jeter à la poubelle et créer votre propre authentificateur.
 
+            logout:
+                path: app_logout
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 

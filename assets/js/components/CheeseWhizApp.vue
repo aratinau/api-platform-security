@@ -59,6 +59,11 @@ v-on:user-authenticated="onUserAuthenticated"<template>
             return {
                 user: null
             }
+        },
+        mounted() {
+            if (window.user) {
+                this.user = window.user;
+            }
         }
     }
 </script>
