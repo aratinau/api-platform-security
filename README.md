@@ -18,6 +18,13 @@
 
 `bin/console doctrine:schema:create --env=test`
 
+### Lifecycle of an Incoming Request
+
+When you send data to an endpoint API platform does the following things in this order. 
+- First, it deserializes the JSON into whatever resource object we're working with - like a CheeseListing object.
+- Second, it applies the security access controls.
+- And third it applies our validation rules.
+
 #### composer
 
 connaitre la version d'un paquet `composer show api-platform/core`
