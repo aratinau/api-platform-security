@@ -43,6 +43,14 @@ And then it happily calls persist() and flush() on the entity manager.
 
 This... is awesome. Why? Because if you want to hook into the "saving" process... or if you ever create an API Resource class that is not stored in Doctrine, you can do that beautifully with a custom data persister.
 
+#### Context Builder & Service Decoration
+
+When you make a GET request for a collection of users or a single user, API Platform will use the same normalization group: user:read. This means the response will always contain the email, username and cheeseListings fields.
+
+Now we need to do something smarter: we need to be able to also normalize using another group - admin:read - but only if the authenticated user has ROLE_ADMIN. The key to doing this is something called a "context builder".
+
+Remember: when API Platform, or really, when Symfony's serializer goes through its normalization or denormalization process, it has something called a "context", which is a fancy word for "options that are passed to the serializer". The most common "option", or "context" is groups. The context is normally hardcoded via annotations but we can also tweak it dynamically.
+
 #### composer
 
 connaitre la version d'un paquet `composer show api-platform/core`
