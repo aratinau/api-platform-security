@@ -19,7 +19,10 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
  *     accessControl="is_granted('ROLE_USER')",
  *     collectionOperations={
  *          "get",
- *          "post"={"access_control"="is_granted('IS_AUTHENTICATED_ANONYMOUSLY')"},
+ *          "post"={
+ *              "access_control"="is_granted('IS_AUTHENTICATED_ANONYMOUSLY')",
+ *              "validation_groups"={"Default", "create"}
+ *          },
  *     },
  *     itemOperations={
  *          "get",
