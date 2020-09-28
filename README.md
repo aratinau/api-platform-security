@@ -8,6 +8,8 @@
 
 `bin/console security:encode`
 
+`bin/console debug:autowiring pass`
+
 ##### Tests
 
 `composer require test --dev`
@@ -24,6 +26,22 @@ When you send data to an endpoint API platform does the following things in this
 - First, it deserializes the JSON into whatever resource object we're working with - like a CheeseListing object.
 - Second, it applies the security access controls.
 - And third it applies our validation rules.
+
+#### data persister
+
+After deserializing the data into a User object, running security checks and executing validation, API Platform finally says:
+
+To figure out how to save the object, it loops over all of its data persisters... so... really... just one at this point... and asks:
+
+    Hi data persister! Do you know how to "save" this object?
+
+Because our two API resources - User and CheeseListing are both Doctrine entities, the Doctrine data persister says:
+
+    Oh yea, I totally do know how to save that!
+
+And then it happily calls persist() and flush() on the entity manager.
+
+This... is awesome. Why? Because if you want to hook into the "saving" process... or if you ever create an API Resource class that is not stored in Doctrine, you can do that beautifully with a custom data persister.
 
 #### composer
 
