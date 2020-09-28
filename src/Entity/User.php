@@ -23,7 +23,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
  *     },
  *     itemOperations={
  *          "get",
- *          "put"={"access_control"="is_granted('EDIT', previous_object)"},
+ *          "put"={"access_control"="is_granted('ROLE_USER') and object == user"},
  *          "delete"={"access_control"="is_granted('ROLE_ADMIN')"}
  *     },
  *     normalizationContext={"groups"={"user:read"}},
@@ -65,6 +65,7 @@ class User implements UserInterface
     /**
      * @Groups("user:write")
      * @SerializedName("password")
+     * @Assert\NotBlank(groups={"create"})
      */
     private $plainPassword;
 
