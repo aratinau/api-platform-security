@@ -51,6 +51,10 @@ Now we need to do something smarter: we need to be able to also normalize using 
 
 Remember: when API Platform, or really, when Symfony's serializer goes through its normalization or denormalization process, it has something called a "context", which is a fancy word for "options that are passed to the serializer". The most common "option", or "context" is groups. The context is normally hardcoded via annotations but we can also tweak it dynamically.
 
+#### Custom Normalizer
+
+`php bin/console make:serializer:normalizer`
+
 #### composer
 
 connaitre la version d'un paquet `composer show api-platform/core`
