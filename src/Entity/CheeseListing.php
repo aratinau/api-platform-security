@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator\IsValidOwner;
 
 /**
  * @ApiResource(
@@ -96,6 +97,7 @@ class CheeseListing
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="cheeseListings")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"cheese:read", "cheese:collection:post"})
+     * @IsValidOwner()
      */
     private $owner;
 

@@ -55,6 +55,10 @@ Remember: when API Platform, or really, when Symfony's serializer goes through i
 
 `php bin/console make:serializer:normalizer`
 
+#### Custom Validator
+
+`bin/console make:validator`
+
 #### composer
 
 connaitre la version d'un paquet `composer show api-platform/core`
