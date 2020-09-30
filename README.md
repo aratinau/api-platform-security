@@ -59,6 +59,15 @@ Remember: when API Platform, or really, when Symfony's serializer goes through i
 
 `bin/console make:validator`
 
+#### Entity Listener
+
+- API Platform event listener
+- API Platform data persister
+- Doctrine event listener.
+
+The first two - an API Platform event listener or data persister - have the same possible downside: the owner would only be automatically set when a CheeseListing is created through the API. Depending on what you're trying to accomplish, that might be exactly what you want - you may want this magic to only affect your API operations.
+So, instead of making this feature only work for our API endpoints, let's use a Doctrine event listener and make it work everywhere.
+
 #### composer
 
 connaitre la version d'un paquet `composer show api-platform/core`
